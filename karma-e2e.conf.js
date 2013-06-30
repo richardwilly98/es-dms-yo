@@ -7,6 +7,7 @@ basePath = '';
 files = [
   ANGULAR_SCENARIO,
   ANGULAR_SCENARIO_ADAPTER,
+  'app/bower_components/lodash/lodash.js',
   'test/e2e/**/*.js'
 ];
 

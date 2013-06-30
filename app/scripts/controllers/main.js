@@ -1,3 +1,4 @@
+/* global _:false */
 'use strict';
 
 angular.module('esDmsSiteApp')
@@ -7,19 +8,17 @@ angular.module('esDmsSiteApp')
       'AngularJS',
       'Karma'
     ];
-	
-	var food = {
-		'fruits': ['apple'],
-		'vegetables': ['beet']
-	};
-
-	var otherFood = {
-		'fruits': ['banana'],
-	'vegetables': ['carrot']
-	};
+    var food = {
+      'fruits': ['apple'],
+      'vegetables': ['beet']
+    };
+    var otherFood = {
+        'fruits': ['banana'],
+        'vegetables': ['carrot']
+      };
 
 	// Concatenate arrays, instead of overwriting the indices.
-	$scope.food = _.merge(food, otherFood, function (left, right) {
-		return _.isArray(left) ? left.concat(right) : undefined;
-	});
+    $scope.food = _.merge(food, otherFood, function (left, right) {
+        return _.isArray(left) ? left.concat(right) : undefined;
+      });
   });
