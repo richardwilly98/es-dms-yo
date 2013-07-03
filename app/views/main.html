@@ -1,13 +1,92 @@
-<div class="hero-unit">
-  <h1>'Allo, 'Allo!</h1>
-  <p>You now have</p>
-  <ul>
-      <li ng-repeat="thing in awesomeThings">{{thing}}</li>
-  </ul>
-  <p>installed.</p>
-  <button class="btn btn-primary">Button</button>
-  <ul>
-      <li ng-repeat="thing in food">{{thing}}</li>
-  </ul>
-  <h3>Enjoy coding! - Yeoman</h3>
+<div data-ng-controller="mainController">
+
+	<esdms-authentication-directive view="'views/authentication/login.html'"/>
+
+	    <!-- Navigation bar -->
+	    <div class="navbar" data-ng-controller="NavbarCtrl" data-bs-navbar="">
+	        <div class="navbar-inner">
+	            <a class="brand" href="#">ElasticSearch Dms Client</a>
+	            <ul class="nav">
+	                <li data-ng-repeat="tab in tabs" data-match-route="{{tab.view}}">
+	                	<a href="#{{tab.view}}">{{tab.title}}</a>
+	                </li>
+	                <li data-ng-show="showLogout" class="divider-vertical"></li>
+					<li class="dropdown">
+	                	<a href="#" class="dropdown-toggle" data-toggle="dropdown">Administration <b class="caret"></b></a>
+	                	<ul class="dropdown-menu">
+			                <li data-ng-repeat="tab in adminTabs" data-match-route="{{tab.view}}">
+			                	<a href="#{{tab.view}}">{{tab.title}}</a>
+			                </li>
+	                	</ul>
+	              	</li>
+					<li data-ng-show="showLogout"><a href="#" data-ng-click="logout()">Logout</a></li>
+	            </ul>
+	            <p data-ng-show="username" class="navbar-text pull-right">
+              		Logged in as <a href="#" class="navbar-link">{{ username }}</a>
+              		
+              		<!--  Danilo start -->
+              		<div class="popover-markup" style="margin-top:10px">
+
+						        <a href="#" class="trigger">Welcome: {{ username }}</a>
+						        
+						        <div class="head hide">
+						        	{{ username }} - profile
+						        	</div>
+						        
+						        <div class="content hide" >
+						            <div class="control-group"> <!-- Name -->
+							        		<label class="control-label">Name:</label>
+							        		<div class="controls">
+							          			<input type="text" ng-model="user.name" ng-disabled="!newUser" placeholder="Name" autofocus="autofocus" />
+							        		</div>
+							      	</div>
+							      					
+										<div class="control-group">  <!-- Email -->
+							        		<label class="control-label">Email:</label>
+							        		<div class="controls">
+							          			<input type="text" ng-model="user.email" placeholder="Email" />
+							        		</div>
+							      	</div>
+						           
+						            
+						            <div class="control-group"> <!-- Roles -->
+							        		<label class="control-label">Roles:</label>
+							        		<div class="controls">
+							        			<select multiple="multiple">
+							        				<option data-ng-repeat="role in user.roles">{{
+							            				role.id }}</option>
+							        			</select>
+							        		</div>
+						      		</div>
+						            
+						             <div class="editable-buttons">
+						            	<button type="submit" class="btn btn-primary editsble-submit">
+						            		<i class="icon-ok icon-white"></i>
+						            	</button>
+						            	<button type="button" class="btn editsble-cancel">
+						            		<i class="icon-remove"></i>
+						            	</button>
+						            </div>
+
+						        </div>
+								  <div class="footer hide">
+								  		<!-- div class="modal-footer">
+										    <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+										    <button class="btn btn-primary">Save changes</button>
+										 </div-->
+										 test
+								  </div>
+						</div>
+						<!--  Danilo end -->              		
+            	</p>
+	        </div>
+	    </div>
+	    <div>
+	        <!-- Placeholder for views -->
+	        <div id="content" ng-view="main">
+	        </div>
+	    </div>
+	<div class="container">
+	</div>
+
 </div>

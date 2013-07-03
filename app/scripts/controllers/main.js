@@ -1,24 +1,11 @@
-/* global _:false */
 'use strict';
 
-angular.module('esDmsSiteApp')
-  .controller('MainCtrl', function ($scope) {
-    $scope.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
-    var food = {
-      'fruits': ['apple'],
-      'vegetables': ['beet']
-    };
-    var otherFood = {
-        'fruits': ['banana'],
-        'vegetables': ['carrot']
-      };
-
-	// Concatenate arrays, instead of overwriting the indices.
-    $scope.food = _.merge(food, otherFood, function (left, right) {
-        return _.isArray(left) ? left.concat(right) : undefined;
-      });
+esDmsSiteApp.controller('mainController', function ($log, $scope, $location, sharedService) {
+  $scope.$location = $location;
+  $scope.username = '';
+  $scope.$on('handleBroadcast', function() {
+    $log.log('Receive brodcast message');
+    //$scope.showLogout = sharedService.message.logout;
+		$scope.username = sharedService.message.user;
   });
+});

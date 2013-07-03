@@ -2,6 +2,7 @@
 'use strict';
 var LIVERELOAD_PORT = 35729;
 var lrSnippet = require('connect-livereload')({ port: LIVERELOAD_PORT });
+var proxySnippet = require('grunt-connect-proxy/lib/utils').proxyRequest;
 var mountFolder = function (connect, dir) {
   return connect.static(require('path').resolve(dir));
 };
@@ -27,6 +28,14 @@ module.exports = function (grunt) {
   } catch (e) {}
 
   grunt.initConfig({
+    env: {
+      options : {
+        // es-dms: Set environment variable for PhantomJS
+        PHANTOMJS_BIN : './node_modules/phantomjs/lib/phantom/phantomjs.exe'
+      },
+      dev : {
+      }
+    },
     yeoman: yeomanConfig,
     watch: {
       coffee: {
@@ -50,15 +59,31 @@ module.exports = function (grunt) {
       }
     },
     connect: {
+      // es-dms: set proxy to access REST api
+      proxies: [
+        {
+          context: '/api',
+          host: 'localhost',
+          port: 8080,
+          //port: 8443,
+          //https: true,
+          changeOrigin: false,
+          rewrite: {
+            '^/api': '/es-dms-site/api'
+          }
+        }
+      ],
       options: {
         port: 9000,
         // Change this to '0.0.0.0' to access the server from outside.
-        hostname: 'localhost'
+        hostname: 'localhost',
+        base: 'es-dms-site'
       },
       livereload: {
         options: {
           middleware: function (connect) {
             return [
+              proxySnippet,
               lrSnippet,
               mountFolder(connect, '.tmp'),
               mountFolder(connect, yeomanConfig.app)
@@ -88,7 +113,8 @@ module.exports = function (grunt) {
     },
     open: {
       server: {
-        url: 'http://localhost:<%= connect.options.port %>'
+        //url: 'http://localhost:<%= connect.options.port %>/<%= connect.options.base %>'
+        url: 'http://localhost:<%= connect.options.port %>/'
       }
     },
     clean: {
@@ -285,6 +311,7 @@ module.exports = function (grunt) {
     grunt.task.run([
       'clean:server',
       'concurrent:server',
+      'configureProxies',
       'connect:livereload',
       'open',
       'watch'
@@ -313,6 +340,7 @@ module.exports = function (grunt) {
   ]);
 
   grunt.registerTask('default', [
+    'env',
     'jshint',
     'test',
     'build'
