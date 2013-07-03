@@ -2,89 +2,24 @@
 'use strict';
 
 var esDmsSiteApp = angular.module('esDmsSiteApp', ['ngResource', 'authentication', 'ui.state', 'http-auth-interceptor', 'ui.bootstrap']);
-/*
-esDmsSiteApp.config(function ($routeProvider) {
-  $routeProvider
-    .when('/', {
-      templateUrl: 'views/main.html',
-      controller: 'mainController'
-    })
-    .when('/search-view', {
-      templateUrl: 'views/search-view.html',
-      controller: 'SearchViewCtrl'
-    })
-    .otherwise({
-      redirectTo: '/'
-    });
-});
-*/
 
 esDmsSiteApp.config(function ($routeProvider, $stateProvider) {
-  $routeProvider
-    .when('/', {
-      templateUrl: 'views/main.html',
-      controller: 'mainController'
+
+  $stateProvider
+    .state('index', {
+      url: '',
+      templateUrl: 'views/main.html'
     })
-    .when('/search', {
+    .state('index.search', {
+      url: '/index.search',
       templateUrl: 'views/documents.search.html'
     })
-    .when('/admin.users', {
+    .state('index.admin-users', {
+      url: '/index.admin-users',
       templateUrl: 'views/admin.users.html'
     })
-    .when('/admin.roles', {
-      templateUrl: 'views/admin.roles.html'
-    })
-    .otherwise({
-      redirectTo: '/'
+    .state('index.admin-roles', {
+      url: '/index.admin-roles',
+      templateUrl: 'views/roles/search-roles.html'
     });
-  $stateProvider
-    .state('/', {
-      url: '',
-      views: {
-        'app': {
-          templateUrl: 'views/main.html'
-        },
-        'main': {
-          templateUrl: 'views/documents.search.html'
-        }
-      }
-    });
-/*
-  $stateProvider
-    .state('/', {
-      url: '',
-      views: {
-        'app': {
-          templateUrl: 'views/main.html'
-        },
-        'main': {
-          templateUrl: 'views/search-view.html'
-        }
-      }
-    })
-    .state('route1', {
-      url: '/search-view',
-      views: {
-        'app': {
-          templateUrl: 'views/main.html'
-        },
-        'main': {
-          templateUrl: 'route1.viewB.html'
-        }
-      }
-    })
-    .state('route2', {
-      url: '/route2',
-      views: {
-        'app': {
-          templateUrl: 'views/main.html'
-        },
-        'main': {
-          templateUrl: 'route2.viewB.html'
-        }
-      }
-    });
-*/
 });
-/*
-*/

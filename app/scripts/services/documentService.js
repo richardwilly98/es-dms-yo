@@ -1,8 +1,6 @@
-/* global _:false */
 'use strict';
 
-esDmsSiteApp
-  .service('documentService', function documentService($log, $resource, $http) {
+esDmsSiteApp.service('documentService', function documentService($log, $resource, $http) {
   var documentResource = $resource('api/documents/:id/:action/:parameter' , {id:'@id'}, {
       checkout: {method:'POST', params: {action: 'checkout'}},
       checkin: {method:'POST', params: {action: 'checkin'}},

@@ -7,7 +7,7 @@ esDmsSiteApp.controller('NavbarCtrl', function ($scope, authenticationService) {
   });
 	
 	$scope.tabs = [
-		{ 'view': '/search', title: 'Search' }/*,
+		{ 'view': '/index.search', title: 'Search' }/*,
 		{ 'view': '/my-documents-view', title: 'My documents' },
 		{ 'view': '/edit-view', title: 'Edit' },
     { 'view': '/view1', title: 'View #1' },
@@ -17,8 +17,8 @@ esDmsSiteApp.controller('NavbarCtrl', function ($scope, authenticationService) {
   ];
 	
 	$scope.adminTabs = [
-		{ 'view': '/admin.users', title: 'Users' },
-		{ 'view': '/admin.roles', title: 'Roles' }
+		{ 'view': '/index.admin-users', title: 'Users' },
+		{ 'view': '/index.admin-roles', title: 'Roles' }
 	];
 	
 	$scope.logout = function() {

@@ -29,7 +29,7 @@
     <![endif]-->
 
     <!-- Add your site or application content here -->
-    <div ui-view="app"></div>
+    <div ui-view></div>
 	<!-- div data-ng-include="'views/main.html'"></div -->
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
@@ -49,19 +49,6 @@
 
         <!-- build:js scripts/plugins.js -->
         <script src="bower_components/jquery/jquery.js"></script>
-        <script src="bower_components/bootstrap-sass/js/bootstrap-affix.js"></script>
-        <script src="bower_components/bootstrap-sass/js/bootstrap-alert.js"></script>
-        <script src="bower_components/bootstrap-sass/js/bootstrap-dropdown.js"></script>
-        <script src="bower_components/bootstrap-sass/js/bootstrap-tooltip.js"></script>
-        <script src="bower_components/bootstrap-sass/js/bootstrap-modal.js"></script>
-        <script src="bower_components/bootstrap-sass/js/bootstrap-transition.js"></script>
-        <script src="bower_components/bootstrap-sass/js/bootstrap-button.js"></script>
-        <script src="bower_components/bootstrap-sass/js/bootstrap-popover.js"></script>
-        <script src="bower_components/bootstrap-sass/js/bootstrap-typeahead.js"></script>
-        <script src="bower_components/bootstrap-sass/js/bootstrap-carousel.js"></script>
-        <script src="bower_components/bootstrap-sass/js/bootstrap-scrollspy.js"></script>
-        <script src="bower_components/bootstrap-sass/js/bootstrap-collapse.js"></script>
-        <script src="bower_components/bootstrap-sass/js/bootstrap-tab.js"></script>
         <!-- endbuild -->
 
         <!-- build:js scripts/modules.js -->
@@ -79,6 +66,12 @@
         <script src="scripts/services/searchService.js"></script>
         <script src="scripts/controllers/login.js"></script>
 		<script src="bower_components/angular-http-auth/src/angular-http-auth.js"></script>
+        <script src="scripts/controllers/user.js"></script>
+        <script src="scripts/services/userService.js"></script>
+        <script src="scripts/controllers/userEdit.js"></script>
+        <script src="scripts/controllers/role.js"></script>
+        <script src="scripts/controllers/roleEdit.js"></script>
+        <script src="scripts/services/roleService.js"></script>
         <!-- endbuild -->
 		
 		<script src="bower_components/angular-authentication/js/angular-authentication.js"></script>
