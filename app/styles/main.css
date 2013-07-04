@@ -2,6 +2,7 @@
 /* Import Bootstrap styles and Responsive styles */
 @import url('bootstrap.css');
 @import url('bootstrap-responsive.css');
+@import url('../bower_components/blueimp-file-upload/css/jquery.fileupload-ui.css');
 
 /* Add top padding for navbar-top-fixed */
 /*body {
