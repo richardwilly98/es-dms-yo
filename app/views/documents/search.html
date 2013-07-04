@@ -3,7 +3,7 @@
 	<form data-ng-submit="search()" class="form-search">
 		<input type="text" data-ng-model="criteria" />
 		<button type="button" class="btn btn-primary" data-ng-click="search()">Search</button>
-		<a data-toggle="modal" href="#editOptions">Options</a>
+		<div data-ng-include src="'views/search/options.html'" data-ng-controller="SearchOptionsCtrl"></div>
 	</form>
 	<br />
 	<div data-ng-show="totalHits">
@@ -80,5 +80,4 @@
     		</div>
   		</div>
 	</div>
-	<div class="modal hide fade" ng-include="'views/documents.search.options.html'" id="editOptions"></div>
 </div>

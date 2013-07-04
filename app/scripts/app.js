@@ -25,5 +25,10 @@ esDmsSiteApp.config(function ($routeProvider, $stateProvider) {
     .state('index.admin-roles', {
       url: '/index.admin-roles',
       templateUrl: 'views/roles/search-roles.html'
-    });
+    })
+    .state('index.test-accordion', {
+      url: '/index.test-accordion',
+      templateUrl: 'views/test/accordion.html'
+    })
+    ;
 });
