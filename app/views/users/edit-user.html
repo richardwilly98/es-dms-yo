@@ -1,6 +1,6 @@
-<div data-ng-controller="UserEditCtrl">
+<div data-ng-controller="UserEditCtrl" modal="shouldBeOpen" options="opts" close="close()">
 	<div class="modal-header">
-		<button type="button" class="close" data-dismiss="modal"
+		<button type="button" class="close" data-ng-click="close()"
 			aria-hidden="true">&times;</button>
 		<h3 data-ng-show="newUser">New user</h3>
 		<h3 data-ng-hide="newUser">Edit User: {{ user.name }}</h3>
@@ -65,7 +65,7 @@
 		</form>
 	</div>
 	<div class="modal-footer">
-		<button type="button" class="btn" data-dismiss="modal">Close</button>
-		<button class="btn btn-primary" data-dismiss="modal" ng-click="save()">Save</button>
+		<button type="button" class="btn" data-ng-click="close()">Close</button>
+		<button class="btn btn-primary" data-ng-click="save()">Save</button>
 	</div>
 </div>

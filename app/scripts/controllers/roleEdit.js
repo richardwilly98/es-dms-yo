@@ -12,9 +12,21 @@ esDmsSiteApp.controller('RoleEditCtrl', function ($scope, $rootScope, roleServic
 			$scope.incomplete = true;
 			$scope.role = {};
 		}
+    $scope.shouldBeOpen = true;
 	});
 	
 	$scope.save = function() {
 		roleService.save($scope.role);
+    $scope.shouldBeOpen = false;
 	};
+
+  $scope.close = function() {
+    $scope.shouldBeOpen = false;
+  };
+
+  $scope.opts = {
+    backdropFade: true,
+    dialogFade:true
+  };
+
 });

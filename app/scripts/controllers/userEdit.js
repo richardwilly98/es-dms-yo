@@ -22,13 +22,24 @@ esDmsSiteApp.controller('UserEditCtrl', function ($scope, $rootScope, $http, use
 			$scope.pw1 = '';
 			$scope.pw2 = '';
 		}
+    $scope.shouldBeOpen = true;
 	});
 	
+  $scope.close = function() {
+    $scope.shouldBeOpen = false;
+  };
+
+  $scope.opts = {
+    backdropFade: true,
+    dialogFade:true
+  };
+
 	$scope.save = function() {
 		if ($scope.newUser) {
 			$scope.user.password = $scope.pw1;
 		}
 		userService.save($scope.user);
+    $scope.shouldBeOpen = false;
 	};
 	
 	$scope.$watch('pw1', function() {

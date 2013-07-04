@@ -1,7 +1,7 @@
 /* exported esDmsSiteApp */
 'use strict';
 
-var esDmsSiteApp = angular.module('esDmsSiteApp', ['ngResource', 'authentication', 'ui.state', 'http-auth-interceptor', 'ui.bootstrap']);
+var esDmsSiteApp = angular.module('esDmsSiteApp', ['ngResource', 'authentication', 'ui.state', 'http-auth-interceptor', 'ui.bootstrap', 'blueimp.fileupload']);
 
 esDmsSiteApp.config(function ($routeProvider, $stateProvider) {
 
@@ -10,13 +10,17 @@ esDmsSiteApp.config(function ($routeProvider, $stateProvider) {
       url: '',
       templateUrl: 'views/main.html'
     })
-    .state('index.search', {
-      url: '/index.search',
-      templateUrl: 'views/documents.search.html'
+    .state('index.documents-search', {
+      url: '/index.documents-search',
+      templateUrl: 'views/documents/search.html'
+    })
+    .state('index.documents-edit', {
+      url: '/index.documents-edit',
+      templateUrl: 'views/documents/edit.html'
     })
     .state('index.admin-users', {
       url: '/index.admin-users',
-      templateUrl: 'views/admin.users.html'
+      templateUrl: 'views/users/search-users.html'
     })
     .state('index.admin-roles', {
       url: '/index.admin-roles',
