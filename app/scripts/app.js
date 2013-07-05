@@ -1,7 +1,7 @@
 /* exported esDmsSiteApp */
 'use strict';
 
-var esDmsSiteApp = angular.module('esDmsSiteApp', ['ngResource', 'authentication', 'ui.state', 'http-auth-interceptor', 'ui.bootstrap', 'blueimp.fileupload']);
+var esDmsSiteApp = angular.module('esDmsSiteApp', ['ngResource', 'authentication', 'ui.state', 'http-auth-interceptor', 'ui.bootstrap', 'blueimp.fileupload', 'ngUpload']);
 
 esDmsSiteApp.config(function ($routeProvider, $stateProvider) {
 

@@ -14,6 +14,7 @@ files = [
   'app/bower_components/ui-router/release/angular-ui-router.js',
   'app/bower_components/angular-authentication/js/angular-authentication.js',
   'app/bower_components/blueimp-file-upload/js/jquery.fileupload-angular.js',
+  'app/bower_components/ngUpload/ng-upload.js',
   'app/bower_components/lodash/lodash.js',
   'app/scripts/*.js',
   'app/scripts/**/*.js',
