@@ -175,8 +175,8 @@ esDmsSiteApp.controller('DocumentCtrl', function ($log, $scope, documentService,
 		}
   };
 
-  $scope.delete = function(id) {
-		documentService.delete(id);
+  $scope.remove = function(id) {
+		documentService.remove(id);
 		var index = getIndexOf(id);
 		if (index) {
 			$scope.documents.splice(index, 1);

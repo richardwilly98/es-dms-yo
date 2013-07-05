@@ -8,6 +8,6 @@ esDmsSiteApp.service('searchService', function searchService($http) {
         headers: {'Content-Type':'application/json; charset=UTF-8'}
 			};
 			$http.post('api/search/_facet_search/' + criteria + '?fi=' + first + '&ps=' + pageSize, payload, config).success(callback);
-		},
+		}
 	};
 });

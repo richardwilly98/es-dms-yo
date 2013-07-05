@@ -30,8 +30,8 @@ esDmsSiteApp.controller('UserCtrl', function ($scope, userService) {
     userService.edit(id);
   };
     
-  $scope.delete = function(id) {
-		userService.delete(id);
+  $scope.remove = function(id) {
+		userService.remove(id);
 		var index = getIndexOf(id);
 		if (index) {
 			$scope.users.splice(index, 1);

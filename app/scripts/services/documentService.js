@@ -56,7 +56,7 @@ esDmsSiteApp.service('documentService', function documentService($log, $resource
         callback(document);
       });
     },
-    delete: function(id) {
+    remove: function(id) {
       $log.log('delete document: ' + id);
       var doc = new documentResource.get({'id': id});
       doc.$delete({'id': id});
@@ -66,6 +66,6 @@ esDmsSiteApp.service('documentService', function documentService($log, $resource
       var response = documentResource.preview({'id': id, 'cr': criteria/*, 'fs': 100*/}, function () {
         callback(response.content);
       });
-    },
+    }
 	};
 });

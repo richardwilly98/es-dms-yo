@@ -26,7 +26,7 @@ esDmsSiteApp.service('userService', function userService($log, $rootScope, $reso
 			}
 			$rootScope.$broadcast('user:edit');
 		},
-		delete: function(id) {
+		remove: function(id) {
 			$log.log('delete document: ' + id);
 			var user = new userResource.get({'id': id});
 			user.$delete({'id': id});
