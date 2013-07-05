@@ -1,6 +1,6 @@
 'use strict';
 
-esDmsSiteApp.controller('DocumentsNewCtrl', function ($log, $scope/*, dialog*/) {
+esDmsSiteApp.controller('DocumentsNewCtrl', function ($log, $scope) {
 	$scope.showAlert = false;
   $scope.alert = {};
 	$scope.newDocument = {};
