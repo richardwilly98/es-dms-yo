@@ -15,8 +15,7 @@
     "ngUpload": "~0.3.8",
     "angular-authentication": "~1.0.4",
     "angular-bootstrap": "~0.4.0",
-    "blueimp-file-upload": "~8.4.3",
-    "ui-router": "~0.0.1"
+    "blueimp-file-upload": "~8.4.3"
   },
   "devDependencies": {
     "angular-mocks": "~1.0.7",
