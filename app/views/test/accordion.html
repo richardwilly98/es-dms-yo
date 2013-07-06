@@ -1,4 +1,5 @@
-<div ng-controller="AccordionDemoCtrl">
+  <div ng-controller="AccordionDemoCtrl">
+  
   <label class="checkbox">
     <input type="checkbox" ng-model="oneAtATime">
     Open only one at a time
@@ -10,8 +11,8 @@
     </accordion-group>
     
     
-    <div id="userprofile-password" ng-include src="'parts/change-password.html'"></div>
-    <div id="userprofile-address" ng-include src="'parts/address.html'"></div>
+    <!-- div id="userprofile-password" ng-include src="'parts/change-password.html'"></div>
+    <div id="userprofile-address" ng-include src="'parts/address.html'"></div-->
     
     <accordion-group heading="{{group.title}}" ng-repeat="group in groups">
       {{group.content}}
@@ -22,4 +23,10 @@
         <div ng-repeat="item in items">{{item}}</div>
     </accordion-group>
   </accordion>
+  
 </div>
+
+   <div class="btn-group">
+      <button class="btn" popover popover-template="views/users/user-profile.html" popover-placement="bottom">Popover With Template</button>
+    </div
+
